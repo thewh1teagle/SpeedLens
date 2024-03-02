@@ -8,13 +8,12 @@
             "chart_type": "line",
             "source": {
                 "type": "sqlite",
-                "query": "SELECT speed, date FROM speedtest WHERE date > '$start_date' AND date < '$end_date' LIMIT 20",
+                "query": "SELECT speed, date FROM speedtest WHERE date > '$start_date' AND date < '$end_date'",
                 "path": "/data/app.db"
             },
             "x": {
                 "format": {
                     "type": "date",
-                    "from": "YYYY-MM-DD HH:mm:ss",
                     "to": "YYYY-MM-DD HH"
                 },
                 "key": "date"
@@ -25,8 +24,7 @@
                 "fill": "#8884d8"
             },
             "debug": true,
-            "refresh_interval": "1m",
-            "date_range": "last_1_year"
+            "refresh_interval": "1m"
         },
         {
             "id": "2",
@@ -40,7 +38,6 @@
             "x": {
                 "format": {
                     "type": "date",
-                    "from": "YYYY-MM-DD HH:mm:ss",
                     "to": "YYYY-MM-DD HH"
                 },
                 "key": "date"
@@ -51,8 +48,7 @@
                 "fill": "#8884d8"
             },
             "debug": true,
-            "refresh_interval": "1m",
-            "date_range": "last_1_year"
+            "refresh_interval": "1m"
         }
     ],
     "tasks": [{
