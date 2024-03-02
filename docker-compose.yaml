@@ -1,6 +1,7 @@
 services:
   app:
     image: thewh1teagle/speedlens
+    restart: unless-stopped
     command: /lens /data/config.json
     volumes:
       - ./data:/data
