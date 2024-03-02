@@ -1,7 +1,7 @@
 # Build
 
 ```console
-name="thewh1teagle/speedlens"
-docker build -t $name .
-docker tag $name:latest $name:latest
-docker push $name
+docker build -t thewh1teagle/speedlens .
+docker tag thewh1teagle/speedlens:latest thewh1teagle/speedlens:latest
+docker push thewh1teagle/speedlens:latest
+```
