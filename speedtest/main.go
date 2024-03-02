@@ -31,7 +31,7 @@ func checkError(db *sql.DB, err error) {
 
 		// Insert the error message and current time into the database
 
-		_, err = stmt.Exec(0.0, message, time.Now())
+		_, err = stmt.Exec(0.0, message, nowUTC())
 		println("before")
 		if err != nil {
 			panic(err)
@@ -39,6 +39,13 @@ func checkError(db *sql.DB, err error) {
 
 		os.Exit(1)
 	}
+}
+
+func nowUTC() string {
+	currentTime := time.Now().UTC()
+
+	// Format the time as requested
+	return currentTime.Format("2006-01-02T15:04:05Z")
 }
 
 func getOutboundIP() (string, error) {
@@ -117,7 +124,7 @@ func main() {
 		// Insert the record into the database
 		ip, err := getOutboundIP()
 		checkError(db, err)
-		_, err = stmt.Exec(speed, latency, time.Now(), ip, s.Host, s.ID)
+		_, err = stmt.Exec(speed, latency, nowUTC(), ip, s.Host, s.ID)
 		checkError(db, err)
 	}
 }
