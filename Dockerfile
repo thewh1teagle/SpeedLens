@@ -3,9 +3,17 @@ FROM golang:latest as BUILD
 
 WORKDIR /app
 
-COPY speedtest speedtest
+# Download
+RUN mkdir speedtest
+COPY speedtest/go.mod speedtest/go.mod
+COPY speedtest/go.sum speedtest/go.sum
+
 WORKDIR /app/speedtest
 RUN go mod download
+
+# Build
+COPY speedtest /app/speedtest
+WORKDIR /app/speedtest
 RUN CGO_ENABLED=0 GOOS=linux go build -tags release -o /speedtest main.go
 
 FROM thewh1teagle/lens

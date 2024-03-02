@@ -1,6 +1,6 @@
 services:
   app:
-    image: thewh1teagle/netlens
+    image: thewh1teagle/speedlens
     command: /lens /data/config.json
     volumes:
       - ./data:/data

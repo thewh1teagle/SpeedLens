@@ -8,14 +8,14 @@
             "chart_type": "line",
             "source": {
                 "type": "sqlite",
-                "query": "SELECT speed, date FROM speedtest WHERE date > '$start_date' AND date < '$end_date' LIMIT 20",
+                "query": "SELECT speed, date FROM speedtest WHERE date > '$start_date' AND date < '$end_date' ORDER BY date LIMIT 20",
                 "path": "/data/app.db"
             },
             "x": {
                 "format": {
                     "type": "date",
                     "from": "YYYY-MM-DD HH:mm:ss",
-                    "to": "YYYY-MM-DD HH"
+                    "to": "YYYY-MM-DD HH::mm::ss"
                 },
                 "key": "date"
             },
