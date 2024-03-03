@@ -19,9 +19,7 @@
                 "key": "date"
             },
             "y": {
-                "key": "speed",
-                "stroke": "#82ca9d",
-                "fill": "#8884d8"
+                "key": "speed"
             },
             "debug": true,
             "refresh_interval": "1m"
@@ -43,9 +41,7 @@
                 "key": "date"
             },
             "y": {
-                "key": "speed",
-                "stroke": "#82ca9d",
-                "fill": "#8884d8"
+                "key": "speed"
             },
             "debug": true,
             "refresh_interval": "1m"
@@ -56,5 +52,18 @@
         "command": "/speedtest /data/app.db",
         "cwd": "/",
         "verbose": true
+    }],
+    "alerts": [{
+        "source": {
+            "type": "sqlite",
+            "query": "SELECT AVG(speed) as avg FROM speedtest WHERE date >= datetime('now', '-3 hour')",
+            "path": "/data/app.db"
+        },
+        "condition": "$avg > 20",
+        "url": "https://ntfy.sh/lens_speed_notifications",
+        "message": "Current speed is $avg!",
+        "check_every": "2s",
+        "cooldown": "30m",
+        "enable": true
     }]
 }
