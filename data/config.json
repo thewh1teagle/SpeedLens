@@ -14,7 +14,7 @@
             "x": {
                 "format": {
                     "type": "date",
-                    "to": "YYYY-MM-DD HH"
+                    "to": "YYYY-MM-DD HH:mm"
                 },
                 "key": "date"
             },
