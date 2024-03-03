@@ -63,7 +63,7 @@
         "url": "https://ntfy.sh/lens_speed_notifications",
         "message": "Current speed is $avg!",
         "check_every": "2s",
-        "cooldown": "30m",
+        "cooldown": "5s",
         "enable": true
     }]
 }
