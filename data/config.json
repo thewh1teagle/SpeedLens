@@ -59,11 +59,11 @@
             "query": "SELECT AVG(speed) as avg FROM speedtest WHERE date >= datetime('now', '-3 hour')",
             "path": "/data/app.db"
         },
-        "condition": "$avg > 20",
+        "condition": "$avg > 50",
         "url": "https://ntfy.sh/lens_speed_notifications",
         "message": "Current speed is $avg!",
-        "check_every": "2s",
-        "cooldown": "5s",
-        "enable": true
+        "check_every": "5m",
+        "cooldown": "30m",
+        "enable": false
     }]
 }
