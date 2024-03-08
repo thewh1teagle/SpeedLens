@@ -1,5 +1,5 @@
 {
-    "$schema": "../schema/default.schema.json",
+    "$schema": "https://raw.githubusercontent.com/thewh1teagle/Lens/main/schema/default.schema.json",
     "title": "Speed Dash with tasks",
     "widgets": [
         {
@@ -14,7 +14,8 @@
             "x": {
                 "format": {
                     "type": "date",
-                    "to": "YYYY-MM-DD HH:mm"
+                    "to": "YYYY-MM-DD HH:mm",
+                    "timezone": "Asia/Jerusalem"
                 },
                 "key": "date"
             },
@@ -36,7 +37,8 @@
             "x": {
                 "format": {
                     "type": "date",
-                    "to": "YYYY-MM-DD HH"
+                    "to": "YYYY-MM-DD HH",
+                    "timezone": "Asia/Jerusalem"
                 },
                 "key": "date"
             },
