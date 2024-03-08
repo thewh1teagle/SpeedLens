@@ -45,7 +45,7 @@ func nowUTC() string {
 	currentTime := time.Now().UTC()
 
 	// Format the time as requested
-	return currentTime.Format("2006-01-02T15:04:05Z")
+	return currentTime.Format("2006-01-02 15:04:05")
 }
 
 func getOutboundIP() (string, error) {
