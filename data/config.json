@@ -59,15 +59,15 @@
         {
             "source": {
                 "type": "sqlite",
-                "query": "SELECT AVG(speed) as avg FROM speedtest WHERE date >= datetime('now', '-3 hour')",
+                "query": "SELECT AVG(speed) as avg FROM speedtest WHERE date >= datetime('now', '-2 hour')",
                 "path": "/data/app.db"
             },
-            "condition": "$avg > 50",
+            "condition": "$avg > 45",
             "url": "https://ntfy.sh/lens_speed_notifications",
             "message": "Network back to normal. Current speed is $avg!",
             "check_every": "5m",
             "cooldown": "30m",
-            "enable": false
+            "enable": true
         },
         {
             "source": {
@@ -80,7 +80,7 @@
             "message": "Detected network issues in latest 3 hours. Current speed is $avg!",
             "check_every": "5m",
             "cooldown": "30m",
-            "enable": true
+            "enable": false
         }
     ]
 }
